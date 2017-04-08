@@ -18,7 +18,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: saleor
+  name: django.pics
 spec:
   replicas: 1
   template:
@@ -41,20 +41,10 @@ spec:
           value: env
         - name: ALLOWED_HOSTS
           value: "*"
-        - name: DEMO_GREETING
-          value: "Hello from the environment"
         - name: DATABASE_URL
-          value: "postgres://saleor:saleor@10.0.0.182:5432/saleor"
-        - name: CELERY_BROKER_URL
-          value: "redis://redis:6379/1"
-        - name: CELERY_RESULT_BACKEND
-          value: "redis://redis:6379/2"
-        - name: DEFAULT_FROM_EMAIL
-          value: "noreply@example.com"
+          value: "postgres://django:django@10.0.0.154:5432/django"
         - name: ELASTICSEARCH_URL
           value: "http://search:9200/"
-        - name: OPENEXCHANGERATES_API_KEY
-          value: ""
         - name: REDIS_URL
           value: "redis://redis:6379/0"
         - name: SECRET_KEY
@@ -65,6 +55,6 @@ spec:
       volumes:
       - name: reload
         hostPath:
-          path: /Users/yazhu/myProject/workspace/saleor
+          path: /Users/yazhu/myProject/workspace/django_pics
 #Dev only hot reload from image
 

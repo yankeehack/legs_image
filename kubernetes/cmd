@@ -15,13 +15,17 @@ kubectl exec <Redis POD NAME> -- df -h | grep redis
 kubectl describe pod xxx
 
 
+kubectl delete deployment django.pics && kubectl delete service django && kubectl create -f kubernetes/django_deployment.yaml
+
 redis-cli -h HOST -p PORT -n DATABASE_NUMBER llen QUEUE_NAME
 #celery's default queue is named as celery not default
 redis-cli -h HOST -p PORT -n DATABASE_NUMBER keys \*
 ###notes####
 pods unit that handle containers, pod could have multiple containers inside
 deployment handles create/delete/maintaining pods
-services handle's service discovery and loadballance
+services handle's service discovery and load balance
 
 
-
+# when minikube can't connect, run this, normally its due to vpn which is messing around routing table
+netstat -nr
+sudo route -n add  192.168.99.100/24 -interface vboxnet0

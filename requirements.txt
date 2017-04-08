@@ -1,7 +1,6 @@
 django_annoying==0.10.3
 channels==0.17.3
 Django==1.10.3
-gunicorn==19.4.5
 daphne==0.14.1
 django_imagekit==3.3
 dj-database-url==0.4.0
@@ -20,3 +19,5 @@ zope.interface==4.1.3
 haikunator==1.0.1
 six==1.10.0
 msgpack-python==0.4.7
+uwsgi==2.0.14
+

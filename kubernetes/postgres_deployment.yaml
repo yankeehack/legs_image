@@ -29,8 +29,8 @@ spec:
         image: postgres
         env:
         - name: POSTGRES_USER
-          value: "saleor"
+          value: "django"
         - name: POSTGRES_PASSWORD
-          value: "saleor"
+          value: "django"
         ports:
           - containerPort: 5432
