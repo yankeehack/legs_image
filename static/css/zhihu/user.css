@@ -1,0 +1,154 @@
+.home-user {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  border: 1px solid #eee;
+}
+.home-user .user-infomation .frame {
+  margin: 50px 20px;
+  border: 1px solid #eee;
+  padding: 0 10px;
+}
+.home-user .user-infomation .frame .frame-title {
+  margin: 10px 5px;
+  padding: 5px 0px;
+  font-size: 17px;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+}
+.home-user .user-infomation .frame .frame-body {
+  min-width: 500px;
+}
+.home-user .user-infomation .frame .frame-body .frame-answers {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+.home-user .user-infomation .frame .frame-body .frame-answers .answer-ups {
+  float: left;
+}
+.home-user .user-infomation .frame .frame-body .frame-answers .answer-ups div {
+  color: #259;
+  height: 45px;
+  width: 50px;
+  font-weight: bold;
+  background-color: #eff6fa;
+  text-align: center;
+}
+.home-user .user-infomation .frame .frame-body .frame-answers .answer-ups div span {
+  color: #259;
+  display: block;
+}
+.home-user .user-infomation .frame .frame-body .frame-answers .answer-question {
+  margin-left: 20px;
+  float: left;
+}
+.home-user .user-infomation .frame .frame-body .frame-answers .answer-question .answer a {
+  font-size: 17px;
+  font-weight: bold;
+  color: #259;
+}
+.home-user .user-infomation .frame .frame-body .frame-answers .answer-question .question {
+  font-size: 15px;
+}
+.home-user .user-infomation .frame .frame-body .frame-answers .answer-question .question_about span {
+  font-size: 14px;
+  color: #999;
+}
+.home-user .user-introduction {
+  max-width: 220px;
+}
+.home-user .user-introduction .user-name {
+  margin-bottom: 30px;
+}
+.home-user .user-introduction .user-count {
+  font-size: 17px;
+}
+.home-user .user-introduction .user-avatar {
+  /*width: 140px;*/
+  position: relative;
+  border-radius: 5px;
+}
+.home-user .user-introduction .user-avatar img {
+  position: relative;
+  height: 140px;
+  width: 140px;
+}
+.home-user .user-introduction .user-avatar #span_note {
+  display: block;
+  color: #999;
+  margin-top: 15px;
+}
+.home-user .user-introduction .user-avatar #span_update {
+  display: block;
+  color: #999;
+  margin-top: 15px;
+}
+.home-user .user-introduction .user-avatar #update_avatar {
+  display: none;
+}
+.home-user .user-introduction .user-avatar #myform {
+  display: none;
+}
+.home-user .user-introduction .user-avatar:hover {
+  opacity: 0.8;
+}
+.home-user .user-introduction .user-avatar:hover #update_avatar {
+  position: absolute;
+  display: block;
+  top: 125px;
+  height: 25px;
+  width: 140px;
+  line-height: 25px;
+  font-size: 17px;
+  text-align: center;
+  background-color: #000;
+  color: white;
+}
+
+.setting-user {
+  margin-top: 50px;
+  min-height: 600px;
+}
+.setting-user .tab-content {
+  margin-bottom: 300px;
+}
+.setting-user .tab-content .update {
+  margin-top: 30px;
+}
+.setting-user .tab-content .update .updateErr {
+  margin-left: 100px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: none;
+  font-size: 15px;
+}
+.setting-user .tab-content .update .info-tab {
+  border-bottom: 1px solid #eee;
+  margin: 30px 0;
+}
+.setting-user .tab-content .update .info-tab .user-info {
+  margin-left: 50px;
+  font-size: 17px;
+}
+.setting-user .tab-content .update .info-tab .user-info .edit-name {
+  margin-left: 30px;
+  font-size: 15px;
+}
+.setting-user .tab-content .update .info-tab .edited {
+  display: none;
+}
+.setting-user .tab-content .update .info-tab .info {
+  width: 220px;
+}
+.setting-user .tab-content .update .info-tab .submit {
+  width: 60px;
+  background-color: #046BD2;
+  color: white;
+}
+.setting-user .tab-content a {
+  padding: 5px;
+  text-decoration: none;
+}
+.setting-user .tab-content a:hover {
+  background-color: #eff6fa;
+}

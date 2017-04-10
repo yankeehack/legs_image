@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load render_bundle from webpack_loader %}
+
+<html>
+  <head>
+    <title>{% block title %}知乎·首页 {% endblock %}</title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+    <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.js"></script>
+    <script type="text/javascript" src="/javascripts/common.js"></script>
+    <link rel="stylesheet" href="/stylesheets/common.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    {% render_bundle 'storefront' 'css' %}
+    {% block stylesheet %}{% endblock stylesheet %}
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+     {% include 'zhihu_clone/common/topNav.html' %}
+    <div class="index-zhihu col-md-8 col-md-offset-2">
+      <div class="left-content col-md-8">
+        <div class="tag-top">
+          <span class="glyphicon glyphicon-th-list"></span>
+          <span class="h4">最新动态</span>
+        </div>
+        <div class="pushes">
+          <% include pushes %>
+        </div>
+      </div>
+      <div class="right-others col-md-4">
+        <img id="working" src="/images/static/working.png" alt="">
+        <span id="warning">抱歉，这边正在紧张的施工…</span>
+      </div>
+    </div>
+  </body>
+</html>

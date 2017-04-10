@@ -47,6 +47,11 @@ INSTALLED_APPS = [
     'imagekit',
     'annoying',
     'feeds',
+    'zhihu_clone',
+
+    # external apps
+    'rest_framework',
+    'allauth'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -60,8 +65,6 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Django standard middlewares above
 
-    # Custom middlewares below
-    'feeds.middleware.login_required_middleware.FilterUnauthUsers',
 ]
 
 ROOT_URLCONF = 'urls'
@@ -74,7 +77,7 @@ LOADERS = [
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, '..', 'templates')],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -99,26 +102,27 @@ DATABASES = {
         conn_max_age=600)
 }
 
+# Used by all-AUTH app https://django-allauth.readthedocs.io/en/latest/overview.html
+AUTH_USER_MODEL = 'zhihu_clone.models.user.User'
+# used by allauth
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_SESSION_REMEMBER = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_FORMS = {
+    'reset_password_from_key': 'saleor.userprofile.forms.SetPasswordForm'
+}
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`, this is the default value
+    'django.contrib.auth.backends.ModelBackend',
 
-
-# Password validation
-# https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
-
+    # `allauth` specific authentication methods, such as login by e-mail, not needed here since we are using allauth's url directly, but kept here as reference
+    'allauth.account.auth_backends.AuthenticationBackend'
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/

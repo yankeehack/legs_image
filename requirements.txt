@@ -20,4 +20,8 @@ haikunator==1.0.1
 six==1.10.0
 msgpack-python==0.4.7
 uwsgi==2.0.14
+djangorestframework==3.5.3
+django-allauth==0.30.0
+
+
 
