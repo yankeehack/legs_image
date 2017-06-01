@@ -37,9 +37,9 @@ var providePlugin = new webpack.ProvidePlugin({
 
 var config = {
   entry: {
-    category: './saleor/static/js/category.js',
-    dashboard: './saleor/static/js/dashboard.js',
-    storefront: './saleor/static/js/storefront.js',
+    category: './static/js/zhihu/category.js',
+    dashboard: './static/js/zhihu/dashboard.js',
+    storefront: './static/js/zhihu/storefront.js',
     vendor: [
       'babel-es6-polyfill',
       'bootstrap',

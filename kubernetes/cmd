@@ -29,3 +29,10 @@ services handle's service discovery and load balance
 # when minikube can't connect, run this, normally its due to vpn which is messing around routing table
 netstat -nr
 sudo route -n add  192.168.99.100/24 -interface vboxnet0
+
+
+# docker or vbox does not run in parallel with android studio emulator
+launchctl list | grep 'VirtualBox\|docker'
+launchctl stop org.virtualbox.app.VirtualBox.948
+launchctl stop com.docker.docker.2032
+
